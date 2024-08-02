@@ -35,7 +35,7 @@ const getWeatherForecast = async (city) => {
     const response = await fetch(url);
     const data = await response.json();
     if (data.cod === "200") {
-      let forecastMessage = `Прогноз погоды в ${data.city.name}, ${data.city.country} на следующие 3 дня:\n`;
+      let forecastMessage = `Прогноз погоды в ${data.city.name}, ${data.city.country} на следующие 5 дня:\n`;
       for (let i = 0; i < data.list.length; i += 8) {
         const forecast = data.list[i];
         forecastMessage += `
